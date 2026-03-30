@@ -8,8 +8,8 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
-  base: "/p67",
+  base: "/p67/",
   build:{
-    outDir:"dist"
+    outDir:"docs"
   }
 })
