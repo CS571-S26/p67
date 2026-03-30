@@ -5,5 +5,5 @@ import App from './App.jsx'
 import QuestionRouting from './QuestionRouting.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <QuestionRouting/>
+  <App/>
 )

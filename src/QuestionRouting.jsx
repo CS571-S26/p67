@@ -5,9 +5,7 @@ import App from './App';
 function QuestionRouting() {
     return
         <HashRouter>
-            <Route path="/" element={<App/>}>
-
-            </Route>
+            <App/>
         </HashRouter>
 }
 
