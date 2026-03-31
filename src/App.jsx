@@ -1,13 +1,31 @@
 import { useState } from 'react'
 import './App.css'
+import { Button, Container, Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router'
 
-function App() {
-  const [count, setCount] = useState(0)
+function App(props) {
+
+  const [pressed, changePress] = useState(false);
 
   return (
     <div>
-      <h1>Welcome to the Survey!</h1>
-      <p>It's still a work in progress...</p>
+      <Container style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
+        <h1 className="disguise">Welcome </h1>
+        <h1 className="disguise">to </h1>
+        <h1 className="disguise">the </h1>
+        <Link className="disguise" style={{ textDecoration: 'none' }} to={props.qPath}>Survey!</Link>
+      </Container>
+      <p>In this survey, you will answer a few questions that will help us quantify the quality</p>
+      <p>of our very real prediction model. Thank you for your participation.</p>
+      <br/>
+      <Button className="goButton" onClick={() => {changePress(false); changePress(true)}}>Go to Survey!</Button>
+      {
+        pressed
+        ?
+        <p className="warning">To Survey! Not to the button!</p>
+        :
+        <></>
+      }
     </div>
   )
 }
