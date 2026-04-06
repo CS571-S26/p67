@@ -3,6 +3,7 @@ import { BrowserRouter, HashRouter, Route, Routes } from 'react-router';
 import App from './App';
 import BadLink from './Pages/BadLink';
 import UnderConstruction from './Pages/UnderConstruction';
+import QuestionsPage from './Pages/QuestionsPage';
 
 function QuestionRouting() {
 
@@ -13,7 +14,7 @@ function QuestionRouting() {
             <Routes>
                 <Route path="/">
                     <Route index element={<App qPath={questionPath}/>}/>
-                    <Route path={questionPath} element={<UnderConstruction/>}/>
+                    <Route path={questionPath} element={<QuestionsPage/>}/>
                     <Route path="*" element={<BadLink/>}/>
                 </Route>
             </Routes>
