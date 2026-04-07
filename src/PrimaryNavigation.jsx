@@ -13,7 +13,7 @@ function TopBar() {
             <Navbar bg="dark" variant="dark">
                 <Container>
                     <Nav className='me-auto'>
-                        <Nav.Link href="/">
+                        <Nav.Link href="/p67/">
                             Home
                         </Nav.Link>
                         <Nav.Link href="#/About">
