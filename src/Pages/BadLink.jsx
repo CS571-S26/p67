@@ -7,7 +7,7 @@ function BadLink() {
       <Container style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
         <h1 className="disguise">Uh Oh!</h1>
       </Container>
-      <h2>The link you put in is invalid!</h2>
+      <h2 style={{color:"red"}}>The link you put in is invalid!</h2>
     </div>
   )
 }
