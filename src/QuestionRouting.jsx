@@ -5,6 +5,7 @@ import BadLink from './Pages/BadLink';
 import UnderConstruction from './Pages/UnderConstruction';
 import QuestionsPage from './Pages/QuestionsPage';
 import TopBar from './PrimaryNavigation';
+import AboutYou from './Pages/AboutYou';
 
 function QuestionRouting() {
 
@@ -18,7 +19,7 @@ function QuestionRouting() {
                     <Route path="/">
                         <Route index element={<App qPath={questionPath}/>}/>
                         <Route path={questionPath} element={<QuestionsPage/>}/>
-                        <Route path="/About" element={<UnderConstruction/>}/>
+                        <Route path="/About" element={<AboutYou/>}/>
                         <Route path="/Contacts" element={<UnderConstruction/>}/>
                         <Route path="*" element={<BadLink/>}/>
                     </Route>
