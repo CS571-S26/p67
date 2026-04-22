@@ -20,15 +20,15 @@ function QuestionAboutYou(prop) {
         <br/>
         <p style={{color:"#fff"}}>Please fill in your personal data to help our research efforts.</p>
         <Form>
-            <Form.Group>
+            <Form.Group style={{justifyItems:"center"}} >
                 <Form.Label style={{color:"#fff"}}>Your Name</Form.Label>
-                <Form.Control onChange={(e) => setInputName(e.target.value)}/>
+                <Form.Control style={{width:"40%"}} onChange={(e) => setInputName(e.target.value)}/>
                 
                 <Form.Label style={{color:"#fff"}}>Year of Birth</Form.Label>
-                <Form.Control type='number' onChange={(e) => setAge(e.target.value)}/>
+                <Form.Control style={{width:"40%"}} type='number' onChange={(e) => setAge(e.target.value)}/>
                 
                 <Form.Label style={{color:"#fff"}}>The quantity of cheese you have consumed</Form.Label>
-                <Form.Control type='number' onChange={(e) => setCheese(e.target.value)}/>
+                <Form.Control style={{width:"40%"}} type='number' onChange={(e) => setCheese(e.target.value)}/>
             </Form.Group>
         </Form>
 
