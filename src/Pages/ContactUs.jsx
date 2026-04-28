@@ -5,6 +5,8 @@ import { useState } from 'react';
 
 function Contact(props) {
 
+    const contactData = localStorage.getItem("contactData") == null ? null : JSON.parse(localStorage.getItem("contactData"));
+    const transitions = contactData.transitions;
     const [givenNum, setGivenNum] = useState(0);
     const [answerNum, setAnswerNum] = useState(-1);
 
@@ -31,6 +33,15 @@ function Contact(props) {
             </Form>  
             <br/> 
             <Button variant="primary" onClick={() => {
+                if (contactData == null){
+                    setAnswerNum(Math.floor(Math.random() * 10000000000));
+                    return;
+                }
+                const transTo = transitions.filter(e => e.from === givenNum);
+                if (transTo.length > 0){
+                    setAnswerNum(transTo[0].to);
+                    return;
+                }
                 setAnswerNum(Math.floor(Math.random() * 10000000000));
             }}>
                 Submit
