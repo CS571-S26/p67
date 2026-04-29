@@ -13,18 +13,19 @@ import OtherParticipants from './Pages/Others';
 function QuestionRouting() {
 
     const questionPath = "/questions";
+    const [refresh, setRefresh] = useState(false);
 
     return(
         <div>
-            <TopBar/>
+            <TopBar refreshInfo={refresh}/>
             <HashRouter>
                 <Routes>
                     <Route path="/">
-                        <Route index element={<App qPath={questionPath}/>}/>
+                        <Route index element={<App qPath={questionPath} refreshFunc={setRefresh}/>}/>
                         <Route path={questionPath} element={<QuestionsPage/>}/>
                         <Route path="/About" element={<AboutYou/>}/>
                         <Route path="/Contacts" element={<Contact/>}/>
-                        <Route path="/Forget" element={<ForgetEverything/>}/>
+                        <Route path="/Forget" element={<ForgetEverything refreshFunc={setRefresh}/>}/>
                         <Route path="/Others" element={<OtherParticipants/>}/>
                         <Route path="*" element={<BadLink/>}/>
                     </Route>

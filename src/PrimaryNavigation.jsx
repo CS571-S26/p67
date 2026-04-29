@@ -6,7 +6,7 @@ import UnderConstruction from './Pages/UnderConstruction';
 import QuestionsPage from './Pages/QuestionsPage';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 
-function TopBar() {
+function TopBar(props) {
     
     return(
         <div>

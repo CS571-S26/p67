@@ -30,6 +30,7 @@ function ForgetEverything(props){
                         to="/"
                         onClick={() => {
                             localStorage.clear();
+                            props.refreshFunc(e => !e);
                         }}
                         style={styles.button}
                     >

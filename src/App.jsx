@@ -13,7 +13,7 @@ function App(props) {
         <h1 className="disguise">Welcome </h1>
         <h1 className="disguise">to </h1> 
         <h1 className="disguise">the </h1>
-        <Link className="disguise" style={{ textDecoration: 'none' }} to={props.qPath}>Survey!</Link>
+        <Link className="disguise" style={{ textDecoration: 'none' }} to={props.qPath} onClick={() => {if (localStorage.getItem("questionProgress") == null) localStorage.setItem("questionProgress", 0); props.refreshFunc(e => !e); }}>Survey!</Link>
       </Container>
       <p>In this survey, you will answer a few questions that will help us quantify the quality</p>
       <p>of our very real prediction model. Thank you for your participation.</p>
