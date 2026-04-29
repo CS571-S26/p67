@@ -10,18 +10,34 @@ function TopBar() {
     
     return(
         <div>
-            <Navbar bg="dark" variant="dark" fixed="top" style={{ zIndex: 1000 }}>
-                <Container>
+            <Navbar bg="dark" variant="dark" sticky="top" style={{ zIndex: 1000 }}>
+                <Container style={{marginLeft:200,marginRight:0}}>
+                    <Navbar.Brand href="/p67/">The Survey.</Navbar.Brand>
                     <Nav className='me-auto'>
-                        <Nav.Link href="/p67/">
-                            Home
-                        </Nav.Link>
+                        {
+                            localStorage.getItem("questionProgress") == null
+                            ?
+                            <></>
+                            :
+                            <Nav.Link href="#/questions">
+                                Questions
+                            </Nav.Link>
+                        }
                         <Nav.Link href="#/About">
                             About You
                         </Nav.Link>
                         <Nav.Link href="#/Contacts">
                             Contact Us
                         </Nav.Link>
+                        {
+                            localStorage.getItem("completed") == null
+                            ?
+                            <></>
+                            :
+                            <Nav.Link href="#/Others">
+                                Others
+                            </Nav.Link>
+                        }
                         <Nav.Link href="#/Forget">
                             Forget
                         </Nav.Link>

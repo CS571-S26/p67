@@ -43,14 +43,13 @@ function ForgetEverything(props){
 
 const styles = {
     page: {
-        minHeight: "100vh",
-        width: "100vw",
+        minHeight: "90vh",
         display: "flex",
         justifyContent: "center",
+        justifySelf: "center",
         alignItems: "center",
         background: "#f3f4f6",
         padding: "2rem",
-        paddingTop: "5rem",
         boxSizing: "border-box"
     },
 

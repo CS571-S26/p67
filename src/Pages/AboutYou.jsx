@@ -64,8 +64,9 @@ function AboutYou(props) {
 
 const styles = {
     page: {
-        minHeight: "100vh",
-        width: "100vw",
+        justifySelf: "center",
+        minHeight: "90vh",
+        width: "95vw",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

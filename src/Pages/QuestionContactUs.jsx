@@ -49,14 +49,13 @@ function QuestionContactUs(prop) {
     }, [])
 
   return (
-    <div>
-        <h2 style={{color:"#fff"}}>Our Information</h2>
+    <div style={{marginTop:"500"}}>
+        <h2>Our Information</h2>
         <br/>
-        <p style={{color:"#fff"}}>Please fill in with some of our information.</p>
-        <p style={{color:"#fff"}}>If you have trouble finding our infomation, just contact us!</p>
-        <p style={{color:"#fff"}}>First was {contactData.initial}, use the outputs as inputs and give us</p>
-        <br/>
-        <p style={{color:"#f00", whiteSpace:"pre"}} >t h e   f i f t h   n u m b e r .</p>
+        <p>Please fill in with some of our information.</p>
+        <p>If you have trouble finding our infomation, just contact us!</p>
+        <p>Send us the number {contactData.initial}, and we'll tell you</p>
+        <h4 style={{color:"#f00", whiteSpace:"pre"}} >t h e   n u m b e r .</h4>
         <br/>
         <Form>
             <Form.Group style={{justifyItems:"center"}} >

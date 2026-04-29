@@ -17,8 +17,8 @@ function Contact(props) {
 
         const transTo = transitions.filter(e => e.from == givenNum);
 
-        if (transTo.length > 0) {
-            setAnswerNum(transTo[0].to);
+        if (givenNum == contactData.initial) {
+            setAnswerNum(contactData.answer);
             return;
         }
 
@@ -89,10 +89,11 @@ function Contact(props) {
 
 const styles = {
     page: {
-        minHeight: "100vh",
-        width: "100vw",
+        minHeight: "85vh",
+        width: "90vw",
         display: "flex",
         justifyContent: "center",
+        justifySelf: "center",
         alignItems: "center",
         background: "#f3f4f6",
         paddingTop: "3rem",

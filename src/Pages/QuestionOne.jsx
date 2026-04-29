@@ -24,13 +24,18 @@ function QuestionOne(prop) {
         let total = 0;
         buttonStates.map((arr, i1) => arr.map((item, i2) => total += buttonStates[i1][i2] ? 1 : 0));
         prop.contFunc(total >= 24);
+        if (total >= 24){
+            if (localStorage.getItem("q1Presses") == null){
+                localStorage.setItem("q1Presses", pressQuant.toString());
+            }
+        }
     }, [buttonStates])
 
   return (
     <div>
-        <h2 style={{color:"#fff"}}>Before we start...</h2>
+        <h2>Before we start...</h2>
         <br/>
-        <p style={{color:"#fff"}}>Please fill in up to all but one button to confirm your participation.</p>
+        <p>Please fill in up to all but one button to confirm your participation.</p>
         <div style={{justifySelf:"center", width:"35vw"}}>
             <Container>
                 {buttonStates == null ? <></> : buttonStates.map((ar, index1) => {
@@ -50,7 +55,7 @@ function QuestionOne(prop) {
             </Container>
             <br/>
             {
-                pressQuant > 20
+                pressQuant > 30
                 ?
                 <Button variant="primary" onClick={() => {
                     setButtons(buttonStates.map((arr, i1) => arr.map((item, i2) => true)));

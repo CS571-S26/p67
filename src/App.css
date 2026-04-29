@@ -1,7 +1,7 @@
 .disguise {
   font-family: var(--heading);
   font-weight: 500;
-  color: var(--text-h);
+  color: black;
   font-size: 56px;
   letter-spacing: -1.68px;
   margin: 32px 0;
@@ -13,18 +13,6 @@
   padding-top: 20vh;
   padding-bottom: 10vh;
   align-self: center;
-}
-
-@keyframes warningAnim {
-  0% {color: white; opacity: 1;}
-  50% {color: red; opacity: 1;}
-  75% {color: red; opacity: 1;}
-  100% {color: red; opacity: 0;}
-}
-
-.warning {
-  opacity: 1;
-  color: red;
 }
 
 .goButton {

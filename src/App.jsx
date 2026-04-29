@@ -11,18 +11,18 @@ function App(props) {
     <div>
       <Container style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
         <h1 className="disguise">Welcome </h1>
-        <h1 className="disguise">to </h1>
+        <h1 className="disguise">to </h1> 
         <h1 className="disguise">the </h1>
         <Link className="disguise" style={{ textDecoration: 'none' }} to={props.qPath}>Survey!</Link>
       </Container>
-      <p style={{color:"#fff"}}>In this survey, you will answer a few questions that will help us quantify the quality</p>
-      <p style={{color:"#fff"}}>of our very real prediction model. Thank you for your participation.</p>
+      <p>In this survey, you will answer a few questions that will help us quantify the quality</p>
+      <p>of our very real prediction model. Thank you for your participation.</p>
       <br/>
       <Button className="goButton" onClick={() => {changePress(false); changePress(true)}}>Go to Survey!</Button>
       {
         pressed
         ?
-        <p className="warning">To Survey! Not to the button!</p>
+        <p style={{color:"red"}}>To Survey! Not to the button!</p>
         :
         <></>
       }

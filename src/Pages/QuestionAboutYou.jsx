@@ -16,18 +16,18 @@ function QuestionAboutYou(prop) {
 
   return (
     <div>
-        <h2 style={{color:"#fff"}}>Personal Information</h2>
+        <h2>Personal Information</h2>
         <br/>
-        <p style={{color:"#fff"}}>Please fill in your personal data to help our research efforts.</p>
+        <p>Please fill in your personal data to help our research efforts.</p>
         <Form>
             <Form.Group style={{justifyItems:"center"}} >
-                <Form.Label style={{color:"#fff"}}>Your Name</Form.Label>
+                <Form.Label>Your Name</Form.Label>
                 <Form.Control style={{width:"40%"}} onChange={(e) => setInputName(e.target.value)}/>
                 
-                <Form.Label style={{color:"#fff"}}>Year of Birth</Form.Label>
+                <Form.Label>Year of Birth</Form.Label>
                 <Form.Control style={{width:"40%"}} type='number' onChange={(e) => setAge(e.target.value)}/>
                 
-                <Form.Label style={{color:"#fff"}}>The quantity of cheese you have consumed</Form.Label>
+                <Form.Label>The quantity of cheese you have consumed</Form.Label>
                 <Form.Control style={{width:"40%"}} type='number' onChange={(e) => setCheese(e.target.value)}/>
             </Form.Group>
         </Form>
@@ -43,7 +43,7 @@ function QuestionAboutYou(prop) {
         {
             showSuccess
             ?
-            <p style={{color:"#0f4"}}>You have been registered!</p>
+            <p style={{color:"rgb(0, 180, 48)"}}>You have been registered!</p>
             :
             <></>
         }
