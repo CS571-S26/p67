@@ -22,6 +22,9 @@ function TopBar() {
                         <Nav.Link href="#/Contacts">
                             Contact Us
                         </Nav.Link>
+                        <Nav.Link href="#/Forget">
+                            Forget
+                        </Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>

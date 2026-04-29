@@ -7,6 +7,7 @@ import QuestionsPage from './Pages/QuestionsPage';
 import TopBar from './PrimaryNavigation';
 import AboutYou from './Pages/AboutYou';
 import Contact from './Pages/ContactUs';
+import ForgetEverything from './Pages/Forget';
 
 function QuestionRouting() {
 
@@ -22,6 +23,7 @@ function QuestionRouting() {
                         <Route path={questionPath} element={<QuestionsPage/>}/>
                         <Route path="/About" element={<AboutYou/>}/>
                         <Route path="/Contacts" element={<Contact/>}/>
+                        <Route path="/Forget" element={<ForgetEverything/>}/>
                         <Route path="*" element={<BadLink/>}/>
                     </Route>
                 </Routes>
