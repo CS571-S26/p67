@@ -20,18 +20,151 @@ function AboutYou(props) {
         cheese:chosenCheese
     }));
 
-
     return (
-        <div>
-            <h2 style={{color:"white"}}>About You</h2>
-            <Image src={you} alt="It's a default portrait that's actually you"/>
-            <p style={{color:"white"}}>Your name is {chosenName}.</p>
-            <p style={{color:"white"}}>You are {chosenAge} years old.</p>
-            <p style={{color:"white"}}>You have eaten {chosenCheese} pounds of cheese in your life.</p>
-            <br/>
-            <p style={{color:"white"}}>Sorry, I don't make the rules.</p>
+        <div style={styles.page}>
+            <div style={styles.card}>
+                <div style={styles.cardHeader}>
+                    <h2 style={styles.title}>About You</h2>
+                </div>
+
+                <div style={styles.cardBody}>
+                    <div style={styles.imageContainer}>
+                        <Image
+                            src={you}
+                            alt="It's a default portrait that's actually you"
+                            style={styles.image}
+                        />
+                    </div>
+
+                    <div style={styles.infoSection}>
+                        <div style={styles.infoRow}>
+                            <span style={styles.label}>Name</span>
+                            <span style={styles.value}>{chosenName}</span>
+                        </div>
+
+                        <div style={styles.infoRow}>
+                            <span style={styles.label}>Age</span>
+                            <span style={styles.value}>{chosenAge}</span>
+                        </div>
+
+                        <div style={styles.infoRow}>
+                            <span style={styles.label}>Cheese Eaten</span>
+                            <span style={styles.value}>{chosenCheese} lbs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style={styles.footer}>
+                    Sorry, I don't make the rules.
+                </div>
+            </div>
         </div>
     );
 }
+
+const styles = {
+    page: {
+        minHeight: "100vh",
+        width: "100vw",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        background: "#f3f4f6",
+        paddingTop: "3rem",
+        boxSizing: "border-box"
+    },
+
+    card: {
+        width: "720px",
+        backgroundColor: "#ffffff",
+        borderRadius: "18px",
+        boxShadow: "0 20px 45px rgba(15, 23, 42, 0.12)",
+        overflow: "hidden",
+        border: "1px solid #e5e7eb",
+        display: "flex",
+        flexDirection: "column"
+    },
+
+    cardHeader: {
+        background: "#111827",
+        padding: "1.25rem 1.75rem",
+        borderBottom: "1px solid #1f2937"
+    },
+
+    title: {
+        margin: 0,
+        color: "#ffffff",
+        fontSize: "1.6rem",
+        fontWeight: "700",
+        letterSpacing: "0.3px"
+    },
+
+    subtitle: {
+        margin: "0.25rem 0 0",
+        color: "#d1d5db",
+        fontSize: "0.85rem",
+        fontWeight: "500",
+        letterSpacing: "1.2px",
+        textTransform: "uppercase"
+    },
+
+    cardBody: {
+        padding: "2rem",
+        display: "flex",
+        gap: "2rem",
+        alignItems: "center"
+    },
+
+    imageContainer: {
+        width: "250px",
+        height: "250px",
+        borderRadius: "12px",
+        overflow: "hidden",
+        border: "1px solid #d1d5db",
+        backgroundColor: "#f9fafb",
+        flexShrink: 0
+    },
+
+    image: {
+        width: "100%",
+        height: "100%",
+        objectFit: "cover"
+    },
+
+    infoSection: {
+        flex: 1
+    },
+
+    infoRow: {
+        marginBottom: "1rem",
+        paddingBottom: "1rem",
+        borderBottom: "1px solid #e5e7eb"
+    },
+
+    label: {
+        display: "block",
+        color: "#6b7280",
+        fontSize: "0.72rem",
+        fontWeight: "700",
+        textTransform: "uppercase",
+        letterSpacing: "0.9px",
+        marginBottom: "0.2rem"
+    },
+
+    value: {
+        display: "block",
+        color: "#111827",
+        fontSize: "1.2rem",
+        fontWeight: "600"
+    },
+
+    footer: {
+        color: "#6b7280",
+        fontSize: "0.9rem",
+        fontStyle: "italic",
+        textAlign: "right",
+        padding: "0 2rem 1.25rem"
+    }
+};
 
 export default AboutYou;

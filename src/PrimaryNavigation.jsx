@@ -10,7 +10,7 @@ function TopBar() {
     
     return(
         <div>
-            <Navbar bg="dark" variant="dark">
+            <Navbar bg="dark" variant="dark" fixed="top" style={{ zIndex: 1000 }}>
                 <Container>
                     <Nav className='me-auto'>
                         <Nav.Link href="/p67/">
