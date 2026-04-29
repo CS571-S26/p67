@@ -4,14 +4,14 @@ import { Button, Col, Container, Form, Image, Row } from 'react-bootstrap'
 function QuestionContactUs(prop) {
 
     if (localStorage.getItem("contactData") == null){
-        const first = Math.floor(Math.random() * 10000000000);
-        const second = Math.floor(Math.random() * 10000000000);
+        let first = Math.floor(Math.random() * 10000000000);
+        let second = Math.floor(Math.random() * 10000000000);
         second = second === first ? (second + 23470923) % 10000000000 : second;
-        const third = Math.floor(Math.random() * 10000000000);
+        let third = Math.floor(Math.random() * 10000000000);
         third = third === second ? (third + 123646789) % 10000000000 : third;
-        const fourth = Math.floor(Math.random() * 10000000000);
+        let fourth = Math.floor(Math.random() * 10000000000);
         fourth = fourth === third ? (fourth + 34656) % 10000000000 : fourth;
-        const fifth = Math.floor(Math.random() * 10000000000);
+        let fifth = Math.floor(Math.random() * 10000000000);
         fifth = fifth === fourth ? (fifth + 973271) % 10000000000 : fifth;
         localStorage.setItem("contactData", JSON.stringify({
             answer: fifth,
@@ -56,11 +56,11 @@ function QuestionContactUs(prop) {
         <p style={{color:"#fff"}}>If you have trouble finding our infomation, just contact us!</p>
         <p style={{color:"#fff"}}>First was {contactData.initial}, use the outputs as inputs and give us</p>
         <br/>
-        <p style={{color:"#f00"}}>t h e   f i f t h   n u m b e r .</p>
+        <p style={{color:"#f00", whiteSpace:"pre"}} >t h e   f i f t h   n u m b e r .</p>
         <br/>
         <Form>
             <Form.Group style={{justifyItems:"center"}} >
-                <Form.Label style={{color:"#f00"}}>T h e   n u m b e r</Form.Label>
+                <Form.Label style={{color:"#f00", whiteSpace:"pre"}}>T h e   n u m b e r :</Form.Label>
                 <Form.Control style={{width:"40%"}} type='number' onChange={(e) => setNumber(e.target.value)}/>
             </Form.Group>
         </Form>
@@ -69,7 +69,7 @@ function QuestionContactUs(prop) {
         {
             showWarning && !showSuccess
             ?
-            <p style={{color:"#d00"}}>{warningMessage}</p>
+            <p style={{color:"#d00", whiteSpace:"pre"}}>{warningMessage}</p>
             :
             <></>
         }
@@ -81,6 +81,7 @@ function QuestionContactUs(prop) {
             <></>
         }
         <Button onClick={() => {
+            console.log(numberGuess);
             if (numberGuess == null){
                 setWarning(true);
                 setWarningMess("W H E R E   I S   T H E   N U M B E R ?");

@@ -6,7 +6,7 @@ import { useState } from 'react';
 function Contact(props) {
 
     const contactData = localStorage.getItem("contactData") == null ? null : JSON.parse(localStorage.getItem("contactData"));
-    const transitions = contactData.transitions;
+    const transitions = contactData == null ? null : contactData.transitions;
     const [givenNum, setGivenNum] = useState(0);
     const [answerNum, setAnswerNum] = useState(-1);
 
@@ -37,7 +37,8 @@ function Contact(props) {
                     setAnswerNum(Math.floor(Math.random() * 10000000000));
                     return;
                 }
-                const transTo = transitions.filter(e => e.from === givenNum);
+                const transTo = transitions.filter(e => e.from == givenNum);
+                console.log(transitions);
                 if (transTo.length > 0){
                     setAnswerNum(transTo[0].to);
                     return;

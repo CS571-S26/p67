@@ -4,6 +4,7 @@ import QuestionOne from './QuestionOne';
 import UnderConstruction from './UnderConstruction';
 import QuestionAboutYou from './QuestionAboutYou';
 import Lucky from './Lucky';
+import QuestionContactUs from './QuestionContactUs';
 
 function QuestionsPage() {
 
@@ -11,7 +12,8 @@ function QuestionsPage() {
     if (localStorage.getItem("questionProgress") == null) localStorage.setItem("questionProgress", 0);
     const [canContinue, setContinue] = useState(false);
     let questions = [<QuestionOne contFunc={setContinue}/>,<QuestionAboutYou contFunc={setContinue}/>
-        ,<Lucky contFunc={setContinue}/>,<UnderConstruction contFunc={setContinue}/>]
+        ,<Lucky contFunc={setContinue}/>,<QuestionContactUs contFunc={setContinue}/>,
+        <UnderConstruction contFunc={setContinue}/>]
 
     useEffect( () => {
 
