@@ -90,19 +90,20 @@ function Contact(props) {
 const styles = {
     page: {
         minHeight: "85vh",
-        width: "90vw",
+        width: "100vw",
         display: "flex",
         justifyContent: "center",
         justifySelf: "center",
         alignItems: "center",
         background: "#f3f4f6",
-        padding: "2rem",
+        padding: "5rem",
         paddingTop: "5rem",
         boxSizing: "border-box"
     },
 
     card: {
-        width: "1100px",
+        width: "100%",
+        maxWidth: "1100px",
         backgroundColor: "#ffffff",
         borderRadius: "18px",
         boxShadow: "0 20px 45px rgba(15, 23, 42, 0.12)",

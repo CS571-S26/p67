@@ -64,9 +64,8 @@ function AboutYou(props) {
 
 const styles = {
     page: {
-        justifySelf: "center",
         minHeight: "90vh",
-        width: "95vw",
+        width: "100vw",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -76,7 +75,8 @@ const styles = {
     },
 
     card: {
-        width: "720px",
+        width: "100%",
+        maxWidth: "720px",
         backgroundColor: "#ffffff",
         borderRadius: "18px",
         boxShadow: "0 20px 45px rgba(15, 23, 42, 0.12)",
