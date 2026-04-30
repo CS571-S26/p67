@@ -25,7 +25,7 @@ function Completion(props) {
                 cheese: JSON.parse(userInfo).cheese,
                 firstPuzzleClicks: q1Info,
                 rollsForLuck: diceInfo,
-                givenNumber: contactData.answer,
+                givenNumber: JSON.parse(contactData).answer,
                 sortingRate: sortInfo
             }]}));
         }
