@@ -68,7 +68,7 @@ function OtherParticipants(props) {
                 {
                 knownUsers.map((user, index) =>{
                     return <Col key={index}>
-                        <Card>
+                        <Card style={{marginBottom:40}}>
                             <Card.Header>
                                 {user.name}
                             </Card.Header>

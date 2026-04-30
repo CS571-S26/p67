@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { BrowserRouter, HashRouter, Route, Routes } from 'react-router';
 import App from './App';
 import BadLink from './Pages/BadLink';
@@ -10,13 +10,17 @@ import Contact from './Pages/ContactUs';
 import ForgetEverything from './Pages/Forget';
 import OtherParticipants from './Pages/Others';
 
+export const context = createContext();
+
 function QuestionRouting() {
 
     const questionPath = "/questions";
     const [refresh, setRefresh] = useState(false);
 
+    
+
     return(
-        <div>
+        <context.Provider value={setRefresh}>
             <TopBar refreshInfo={refresh}/>
             <HashRouter>
                 <Routes>
@@ -31,7 +35,7 @@ function QuestionRouting() {
                     </Route>
                 </Routes>
             </HashRouter>
-        </div>
+        </context.Provider>
     )
 }
 

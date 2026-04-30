@@ -2,6 +2,7 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router";
 
 function ForgetEverything(props){
+    
     return (
         <div style={styles.page}>
             <div style={styles.card}>

@@ -1,12 +1,16 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { Button, Container, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router'
+import { context } from '../QuestionRouting';
 
 function Completion(props) {
+
+    const setRefresh = useContext(context);
 
     useEffect(() => {
         props.contFunc(false);
         localStorage.setItem("completed", "true");
+        setRefresh(e => !e);
     }, [])
 
     const [pressed, changePress] = useState(false);
@@ -43,7 +47,7 @@ function Completion(props) {
                 ?
                 <p>Seems we don't remember you doing the dice rolls. Go back and gamble!</p>
                 :
-                <p>You took {diceInfo} rolls to get 6 sixes!.</p>
+                <p>You took {diceInfo} rolls to get 6 sixes!</p>
             }
             <h2>Your performance on contacting us: </h2>
             {
@@ -59,7 +63,7 @@ function Completion(props) {
                 ?
                 <p>Looks like we have no record of you sorting. You can go back and try sorting again!</p>
                 :
-                <p>You took {sortInfo} swaps to get sort the array!.</p>
+                <p>You took {sortInfo} swaps to get sort the array!</p>
             }
             <h2>And finally, our most important conclusion: </h2>
             <p>You would complete a survey. Yaaaaayyyyy!!!&#127881;&#127881;&#127881;</p>
