@@ -49,7 +49,7 @@ function OtherParticipants(props) {
             firstPuzzleClicks: 69,
             rollsForLuck: 67,
             givenNumber: 1337,
-            sortingRate: 50
+            sortingRate: 1984
         },
         {
             name: "Leonhard Euler",
@@ -59,8 +59,23 @@ function OtherParticipants(props) {
             rollsForLuck: 9,
             givenNumber: 271828182,
             sortingRate: 11
+        },
+        {
+            name: "Bubble Sort",
+            age: 67,
+            cheese: 0,
+            firstPuzzleClicks: 50,
+            rollsForLuck: 89,
+            givenNumber: 957392948,
+            sortingRate: 16
         }
     ]);
+
+    useEffect(() => {
+        if (localStorage.getItem("completedUsers") != null){
+            addKnownUsers(e => [...e, ...JSON.parse(localStorage.getItem("completedUsers")).list]);
+        }
+    }, []);
 
     return (
         <div style={styles.page}>
@@ -90,10 +105,12 @@ function OtherParticipants(props) {
                                         <Accordion.Item eventKey='0'>
                                             <Accordion.Header>More info</Accordion.Header>
                                             <Accordion.Body style={styles.accordionBody}>
-                                                Clicks for first puzzle: {user.firstPuzzleClicks} <br/>
-                                                Dice rolls to win: {user.rollsForLuck} <br/>
+                                                Age: {user.firstPuzzleClicks} years old.<br/>
+                                                &#129472; cheese consumption: {user.rollsForLuck} pounds.<br/>
+                                                Clicks for first puzzle: {user.firstPuzzleClicks} clicks. <br/>
+                                                Dice rolls to win: {user.rollsForLuck} rolls. <br/>
                                                 T h e i r   n u m b e r: {user.givenNumber} <br/>
-                                                Steps to sort list: {user.sortingRate}
+                                                Steps to sort list: {user.sortingRate} swaps.
                                             </Accordion.Body>
                                         </Accordion.Item>
                                     </Accordion>
@@ -111,6 +128,7 @@ const styles = {
     page: {
         minHeight: "100vh",
         width: "100vw",
+        maxWidth: "100%",
         background: "#f3f4f6",
         padding: "5rem 5rem 8rem",
         boxSizing: "border-box",

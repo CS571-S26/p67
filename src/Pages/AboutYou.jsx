@@ -66,8 +66,10 @@ const styles = {
     page: {
         minHeight: "90vh",
         width: "100vw",
+        maxWidth: "100%",
         display: "flex",
         justifyContent: "center",
+        justifySelf: "center",
         alignItems: "center",
         background: "#f3f4f6",
         paddingTop: "3rem",

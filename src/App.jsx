@@ -74,6 +74,7 @@ const styles = {
   page: {
     minHeight: "100vh",
     width: "100vw",
+    maxWidth:"100%",
     background: "#f3f4f6",
     display: "flex",
     justifyContent: "center",

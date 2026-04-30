@@ -91,6 +91,7 @@ const styles = {
     page: {
         minHeight: "85vh",
         width: "100vw",
+        maxWidth: "100%",
         display: "flex",
         justifyContent: "center",
         justifySelf: "center",

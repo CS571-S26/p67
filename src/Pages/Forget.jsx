@@ -46,6 +46,8 @@ function ForgetEverything(props){
 const styles = {
     page: {
         minHeight: "90vh",
+        width: "100vw",
+        maxWidth: "100%",
         display: "flex",
         justifyContent: "center",
         justifySelf: "center",
