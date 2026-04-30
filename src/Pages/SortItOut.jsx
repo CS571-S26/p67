@@ -111,7 +111,7 @@ const styles = {
 
     panel: {
         width: "100%",
-        maxWidth: "900px",
+        maxWidth: "1080px",
         backgroundColor: "#ffffff",
         borderRadius: "18px",
         boxShadow: "0 20px 45px rgba(15, 23, 42, 0.12)",
@@ -179,7 +179,6 @@ const styles = {
     pagination: {
         display: "flex",
         justifyContent: "center",
-        flexWrap: "wrap",
         gap: "0.4rem",
         margin: 0
     },
