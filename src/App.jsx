@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import { Button, Container, Row, Col } from 'react-bootstrap'
+import { Button, Container, Row, Col, Image } from 'react-bootstrap'
 import { Link } from 'react-router'
+import surveyer from './assets/comfortable-survey-taker.jpg'
 
 function App(props) {
 
@@ -29,6 +30,19 @@ function App(props) {
           </p>
           <p style={styles.description}>
             of our very real prediction model. Thank you for your participation.
+          </p>
+          <br />
+          <p style={styles.description}>
+            This survey is a very useful survey, that will give us survey information about surveying. Without this survey we could not know if you or anyone else was surveyable. And if we didn't know that, how would we survey?
+          </p>
+          <Image
+              src={surveyer}
+              alt="survey enjoyer"
+              style={styles.image}
+          />
+          <br />
+          <p style={styles.description}>
+            By taking this survey, you will be surveyed. Using this information we will go to Stanley the surveyor, the master of surveying, to ask for his blessing on this, and all future surveys.
           </p>
         </div>
 
