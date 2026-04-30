@@ -3,6 +3,8 @@ import './App.css'
 import { Button, Container, Row, Col, Image } from 'react-bootstrap'
 import { Link } from 'react-router'
 import surveyer from './assets/comfortable-survey-taker.jpg'
+import survey from './assets/FillingDigitalSurvey.jpg'
+
 
 function App(props) {
 
@@ -32,9 +34,16 @@ function App(props) {
             of our very real prediction model. Thank you for your participation.
           </p>
           <br />
+          <Image
+              src={survey}
+              alt="filling a survey on a laptop"
+              style={styles.image}
+          />
+          <br />
           <p style={styles.description}>
             This survey is a very useful survey, that will give us survey information about surveying. Without this survey we could not know if you or anyone else was surveyable. And if we didn't know that, how would we survey?
           </p>
+          <br />
           <Image
               src={surveyer}
               alt="survey enjoyer"
@@ -79,16 +88,22 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    boxSizing: "border-box"
+    boxSizing: "border-box",
+    marginBottom: "8rem"
+  },
+
+  image: {
+    marginBottom:20
   },
 
   hero: {
     width: "100%",
-    maxWidth: "900px",
     textAlign: "center"
   },
 
   titleContainer: {
+    backgroundColor:"#111827",
+    width:"200%",
     display: "flex",
     justifyContent: "center",
     alignItems: "baseline",
@@ -97,7 +112,7 @@ const styles = {
   },
 
   titleWord: {
-    color: "#111827",
+    color: "#eeeeff",
     fontSize: "4rem",
     fontWeight: "700",
     letterSpacing: "-1.5px",
@@ -106,7 +121,7 @@ const styles = {
   },
 
   titleLink: {
-    color: "#111827",
+    color: "#eeeeff",
     fontSize: "4rem",
     fontWeight: "700",
     letterSpacing: "-1.5px",
