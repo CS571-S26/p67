@@ -1,12 +1,16 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import { Button, Container, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router'
+import { context } from '../QuestionRouting';
 
 function Completion(props) {
+
+    const setRefresh = useContext(context);
 
     useEffect(() => {
         props.contFunc(false);
         localStorage.setItem("completed", "true");
+        setRefresh(e => !e);
     }, [])
 
     const [pressed, changePress] = useState(false);
