@@ -10,7 +10,7 @@ function TopBar(props) {
     
     return(
         <div>
-            <Navbar bg="dark" variant="dark" sticky="top" style={{ zIndex: 1000 }}>
+            <Navbar bg="dark" variant="dark" fixed="top" style={{ zIndex: 1000 }}>
                 <Container style={{marginLeft:200,marginRight:0}}>
                     <Navbar.Brand href="/p67/">The Survey.</Navbar.Brand>
                     <Nav className='me-auto'>

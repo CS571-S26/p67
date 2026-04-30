@@ -98,14 +98,14 @@ const styles = {
 
     warningBox: {
         backgroundColor: "#fef2f2",
-        border: "1px solid #fecaca",
+        border: "1px solid crimson",
         borderRadius: "14px",
         padding: "1.5rem"
     },
 
     warningTitle: {
         margin: "0 0 0.75rem",
-        color: "#991b1b",
+        color: "crimson",
         fontSize: "1.35rem",
         fontWeight: "700"
     },
@@ -118,7 +118,7 @@ const styles = {
     },
 
     note: {
-        color: "#991b1b",
+        color: "crimson",
         fontSize: "0.95rem",
         fontWeight: "600",
         margin: "1rem 0 0"

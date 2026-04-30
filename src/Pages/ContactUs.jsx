@@ -96,7 +96,8 @@ const styles = {
         justifySelf: "center",
         alignItems: "center",
         background: "#f3f4f6",
-        paddingTop: "3rem",
+        padding: "2rem",
+        paddingTop: "5rem",
         boxSizing: "border-box"
     },
 

@@ -8,26 +8,136 @@ function App(props) {
   const [pressed, changePress] = useState(false);
 
   return (
-    <div>
-      <Container style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
-        <h1 className="disguise">Welcome </h1>
-        <h1 className="disguise">to </h1> 
-        <h1 className="disguise">the </h1>
-        <Link className="disguise" style={{ textDecoration: 'none' }} to={props.qPath} onClick={() => {if (localStorage.getItem("questionProgress") == null) localStorage.setItem("questionProgress", 0); props.refreshFunc(e => !e); }}>Survey!</Link>
-      </Container>
-      <p>In this survey, you will answer a few questions that will help us quantify the quality</p>
-      <p>of our very real prediction model. Thank you for your participation.</p>
-      <br/>
-      <Button className="goButton" onClick={() => {changePress(false); changePress(true)}}>Go to Survey!</Button>
-      {
-        pressed
-        ?
-        <p style={{color:"red"}}>To Survey! Not to the button!</p>
-        :
-        <></>
-      }
+    <div style={styles.page}>
+      <section style={styles.hero}>
+        <Container style={styles.titleContainer}>
+          <h1 className="disguise" style={styles.titleWord}>Welcome</h1>
+          <h1 className="disguise" style={styles.titleWord}>to</h1>
+          <h1 className="disguise" style={styles.titleWord}>the</h1>
+          <Link
+            className="disguise"
+            style={{ ...styles.titleLink, textDecoration: 'none' }}
+            to={props.qPath}
+          >
+            Survey!
+          </Link>
+        </Container>
+
+        <div style={styles.textSection}>
+          <p style={styles.description}>
+            In this survey, you will answer a few questions that will help us quantify the quality
+          </p>
+          <p style={styles.description}>
+            of our very real prediction model. Thank you for your participation.
+          </p>
+        </div>
+
+        <div style={styles.actionSection}>
+          <Button
+            className="goButton"
+            style={styles.button}
+            onClick={() => {changePress(false); changePress(true)}}
+          >
+            Go to Survey!
+          </Button>
+
+          {
+            pressed
+            ?
+            <p className="warning" style={styles.warning}>
+              To Survey! Not to the button!
+            </p>
+            :
+            <></>
+          }
+        </div>
+      </section>
     </div>
   )
 }
+
+const styles = {
+  page: {
+    minHeight: "100vh",
+    width: "100vw",
+    background: "#f3f4f6",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    boxSizing: "border-box"
+  },
+
+  hero: {
+    width: "100%",
+    maxWidth: "900px",
+    textAlign: "center"
+  },
+
+  titleContainer: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "baseline",
+    flexWrap: "wrap",
+    marginBottom: "1.25rem"
+  },
+
+  titleWord: {
+    color: "#111827",
+    fontSize: "4rem",
+    fontWeight: "700",
+    letterSpacing: "-1.5px",
+    margin: 0,
+    lineHeight: "1.1"
+  },
+
+  titleLink: {
+    color: "#111827",
+    fontSize: "4rem",
+    fontWeight: "700",
+    letterSpacing: "-1.5px",
+    margin: 0,
+    lineHeight: "1.1"
+  },
+
+  textSection: {
+    maxWidth: "720px",
+    margin: "0 auto",
+    marginBottom: "2rem"
+  },
+
+  description: {
+    color: "#4b5563",
+    fontSize: "1.05rem",
+    lineHeight: "1.7",
+    margin: 0
+  },
+
+  actionSection: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    gap: "1rem"
+  },
+
+  button: {
+    backgroundColor: "#111827",
+    borderColor: "#111827",
+    padding: "0.75rem 1.75rem",
+    borderRadius: "10px",
+    fontWeight: "600",
+    fontSize: "1rem",
+    boxShadow: "0 10px 20px rgba(15, 23, 42, 0.15)"
+  },
+
+  warning: {
+    color: "crimson",
+    backgroundColor: "#fef2f2",
+    border: "1px solid crimson",
+    borderRadius: "10px",
+    padding: "0.75rem 1rem",
+    fontWeight: "600",
+    margin: 0
+  }
+};
 
 export default App
