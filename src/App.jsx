@@ -21,6 +21,7 @@ function App(props) {
             className="disguise"
             style={{ ...styles.titleLink, textDecoration: 'none' }}
             to={props.qPath}
+            onClick={() => {if (localStorage.getItem("questionProgress") == null) localStorage.setItem("questionProgress", 0); props.refreshFunc(e => !e); }}
           >
             Survey!
           </Link>
@@ -116,7 +117,7 @@ const styles = {
     fontSize: "4rem",
     fontWeight: "700",
     letterSpacing: "-1.5px",
-    margin: 0,
+    margin: 0,  
     lineHeight: "1.1"
   },
 
