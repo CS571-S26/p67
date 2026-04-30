@@ -7,18 +7,29 @@ function Completion(props) {
 
     const setRefresh = useContext(context);
 
-    useEffect(() => {
-        props.contFunc(false);
-        localStorage.setItem("completed", "true");
-        setRefresh(e => !e);
-    }, [])
-
     const [pressed, changePress] = useState(false);
     let userInfo = localStorage.getItem("userData");
     let q1Info = localStorage.getItem("q1Presses");
     let diceInfo = localStorage.getItem("diceRollNeeded");
     let contactData = localStorage.getItem("contactData");
     let sortInfo = localStorage.getItem("sortingCount");
+
+    useEffect(() => {
+        props.contFunc(false);
+        localStorage.setItem("completed", "true");
+        setRefresh(e => !e);
+        if (localStorage.getItem("completedUsers") == null){
+            localStorage.setItem("completedUsers",  JSON.stringify({list:[{
+                name: JSON.parse(userInfo).name,
+                age: JSON.parse(userInfo).age,
+                cheese: JSON.parse(userInfo).cheese,
+                firstPuzzleClicks: q1Info,
+                rollsForLuck: diceInfo,
+                givenNumber: contactData.answer,
+                sortingRate: sortInfo
+            }]}));
+        }
+    }, [])
 
     return (
         <div style={styles.page}>
@@ -100,6 +111,7 @@ const styles = {
     page: {
         minHeight: "100vh",
         width: "100vw",
+        maxWidth: "100%",
         background: "#f3f4f6",
         display: "flex",
         justifyContent: "center",
